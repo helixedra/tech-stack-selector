@@ -1,0 +1,254 @@
+@keyframes hero-gradient-animation {
+  0% {
+    --c-0: hsla(198.00000000000009, 36%, 19%, 1);
+    --x-0: 85%;
+    --y-0: 71%;
+    --s-start-0: 5%;
+    --s-end-0: 53%;
+    --c-1: hsla(330, 10%, 14%, 1);
+    --x-1: 26%;
+    --y-1: 23%;
+    --s-start-1: 5%;
+    --s-end-1: 53%;
+    --c-2: hsla(278, 17%, 19%, 1);
+    --x-2: 98%;
+    --y-2: 88%;
+    --s-start-2: 5%;
+    --s-end-2: 53%;
+    --c-3: hsla(347.00000000000017, 0%, 0%, 1);
+    --x-3: 71%;
+    --y-3: 10%;
+    --s-start-3: 5%;
+    --s-end-3: 53%;
+    --c-4: hsla(242.99999999999994, 30%, 7%, 1);
+    --x-4: 37%;
+    --y-4: 44%;
+    --s-start-4: 5%;
+    --s-end-4: 53%;
+  }
+
+  100% {
+    --c-0: hsla(340, 89%, 50%, 1);
+    --x-0: 10%;
+    --y-0: 68%;
+    --s-start-0: 5%;
+    --s-end-0: 53%;
+    --c-1: hsla(293.99999999999994, 27%, 18%, 1);
+    --x-1: 24%;
+    --y-1: 38%;
+    --s-start-1: 5%;
+    --s-end-1: 53%;
+    --c-2: hsla(239, 76%, 57%, 1);
+    --x-2: 39%;
+    --y-2: 28%;
+    --s-start-2: 5%;
+    --s-end-2: 53%;
+    --c-3: hsla(283, 41%, 39%, 1);
+    --x-3: 7%;
+    --y-3: 11%;
+    --s-start-3: 5%;
+    --s-end-3: 53%;
+    --c-4: hsla(276, 22%, 29%, 1);
+    --x-4: 59%;
+    --y-4: 72%;
+    --s-start-4: 5%;
+    --s-end-4: 53%;
+  }
+}
+
+@property --c-0 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsla(198.00000000000009, 36%, 19%, 1);
+}
+
+@property --x-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 85%;
+}
+
+@property --y-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 71%;
+}
+
+@property --s-start-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 5%;
+}
+
+@property --s-end-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 53%;
+}
+
+@property --c-1 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsla(330, 10%, 14%, 1);
+}
+
+@property --x-1 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 26%;
+}
+
+@property --y-1 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 23%;
+}
+
+@property --s-start-1 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 5%;
+}
+
+@property --s-end-1 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 53%;
+}
+
+@property --c-2 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsla(278, 17%, 19%, 1);
+}
+
+@property --x-2 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 98%;
+}
+
+@property --y-2 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 88%;
+}
+
+@property --s-start-2 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 5%;
+}
+
+@property --s-end-2 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 53%;
+}
+
+@property --c-3 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsla(347.00000000000017, 0%, 0%, 1);
+}
+
+@property --x-3 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 71%;
+}
+
+@property --y-3 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 10%;
+}
+
+@property --s-start-3 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 5%;
+}
+
+@property --s-end-3 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 53%;
+}
+
+@property --c-4 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsla(242.99999999999994, 30%, 7%, 1);
+}
+
+@property --x-4 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 37%;
+}
+
+@property --y-4 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 44%;
+}
+
+@property --s-start-4 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 5%;
+}
+
+@property --s-end-4 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 53%;
+}
+
+.gradient {
+  --c-0: hsla(198.00000000000009, 36%, 19%, 1);
+  --x-0: 85%;
+  --y-0: 71%;
+  --c-1: hsla(330, 10%, 14%, 1);
+  --x-1: 26%;
+  --y-1: 23%;
+  --c-2: hsla(278, 17%, 19%, 1);
+  --x-2: 98%;
+  --y-2: 88%;
+  --c-3: hsla(347.00000000000017, 0%, 0%, 1);
+  --x-3: 71%;
+  --y-3: 10%;
+  --c-4: hsla(242.99999999999994, 30%, 7%, 1);
+  --x-4: 37%;
+  --y-4: 44%;
+  background-color: hsla(268.9999999999999, 0%, 0%, 1);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+    radial-gradient(
+      circle at var(--x-0) var(--y-0),
+      var(--c-0) var(--s-start-0),
+      transparent var(--s-end-0)
+    ),
+    radial-gradient(
+      circle at var(--x-1) var(--y-1),
+      var(--c-1) var(--s-start-1),
+      transparent var(--s-end-1)
+    ),
+    radial-gradient(
+      circle at var(--x-2) var(--y-2),
+      var(--c-2) var(--s-start-2),
+      transparent var(--s-end-2)
+    ),
+    radial-gradient(
+      circle at var(--x-3) var(--y-3),
+      var(--c-3) var(--s-start-3),
+      transparent var(--s-end-3)
+    ),
+    radial-gradient(
+      circle at var(--x-4) var(--y-4),
+      var(--c-4) var(--s-start-4),
+      transparent var(--s-end-4)
+    );
+  animation: hero-gradient-animation 10s linear infinite alternate;
+  background-blend-mode: overlay, normal, normal, normal, normal, normal;
+}

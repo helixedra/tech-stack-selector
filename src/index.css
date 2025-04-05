@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+:root {
+  font-family: system-ui, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html {
+  background: #18181b; /* Same as bg-zinc-900 */
+}
+body {
+  margin: 0;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  /* @apply bg-gray-100; */
+  @apply text-gray-900;
+}
+
+[class="dark"] body {
+  /* @apply dark:bg-zinc-900; */
+  @apply dark:text-white;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+button:hover {
+  opacity: 0.8;
+}
+button:focus,
+button:focus-visible {
+  /* outline: 4px auto -webkit-focus-ring-color; */
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #2f2f2f; /* Gray-500 */
+  border-radius: 0.25rem;
+  background-color: transparent; /* Gray-100 */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: rgb(51, 51, 51); /* Blue-500 */
+  border-color: transparent; /* Blue-500 */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M6.173 12.207a.5.5 0 0 1-.707 0l-3.5-3.5a.5.5 0 1 1 .707-.707L6 11.043l7.646-7.646a.5.5 0 0 1 .708.708l-8 8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.75rem;
+}
+
+input[type="checkbox"]:hover {
+  border-color: #535353; /* Blue-600 */
+}
+
+input[type="checkbox"]:focus {
+  outline: none; /* Blue-600 */
+  outline-offset: 2px;
+}
+
+.gradient {
+  background-color: hsla(360, 0%, 0%, 1);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1121 1121' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+    radial-gradient(
+      circle at 50% 0%,
+      hsla(264.7058823529412, 54%, 23%, 1) 3%,
+      transparent 58.62919789166411%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      hsla(264.70588235294133, 44%, 15%, 1) 3.465003465003465%,
+      transparent 40.65355320201512%
+    );
+  background-blend-mode: overlay, normal, normal;
+}
