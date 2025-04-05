@@ -1,12 +1,14 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { tech } from "./data/tech";
-import { RiFileCopyLine } from "react-icons/ri";
 import ThemeToggle from "./ToggleTheme";
-// import GlowGradientBackground from "@/components/glow-gradient-background";
-// import "./gradient.css";
+import TechItem from "./components/TechItem";
+import SelectionArea from "./components/SelectionArea";
+import AppHeader from "./components/AppHeader";
+import CategoriesTabs from "./components/CategoriesTabs";
 
 function App() {
   const [selection, setSelection] = useState<number[]>([]);
+  const [category, setCategory] = useState<string>("Framework");
 
   const handleSelection = (id: number) => {
     setSelection((prev) => {
@@ -16,6 +18,10 @@ function App() {
         return [...prev, id];
       }
     });
+  };
+
+  const resetHandleSelection = () => {
+    setSelection([]);
   };
 
   const buildCommands = (selected: number[]) => {
@@ -30,61 +36,34 @@ function App() {
     }
     return selectedTech.join(" && ");
   };
-
-  const codeRef = useRef<HTMLDivElement>(null);
-  const copyToClipboard = () => {
-    if (codeRef.current) {
-      navigator.clipboard.writeText(codeRef.current.innerText);
-    }
-  };
+  const filteredTech = tech.filter((item) => item.category === category);
 
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-4 gradient">
-      <ThemeToggle />
-      {/* <GlowGradientBackground /> */}
-      <div className="h-full p-12">
-        <h1 className="text-6xl text-center font-mono">Tech Stack Selector</h1>
-        <p className="text-gray-500 text-center">
-          Select the technologies you want to include in your project.
-        </p>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-        {tech.map((item) => (
-          <div
+      {/* <ThemeToggle /> */}
+      <AppHeader />
+      <CategoriesTabs
+        tech={tech}
+        category={category}
+        setCategory={setCategory}
+      />
+      <div className="flex flex-wrap gap-4 mt-4">
+        {filteredTech.map((item) => (
+          <TechItem
+            item={item}
+            selection={selection}
+            handleSelection={handleSelection}
             key={item.id}
-            className={`flex w-fit rounded p-2 items-center gap-2 ${
-              selection.includes(item.id)
-                ? "bg-gray-200 dark:bg-zinc-700/50"
-                : ""
-            }`}
-          >
-            <div className="w-6 h-6">
-              <img src={item.icon} alt={item.name} />
-            </div>
-            <label htmlFor={`tech-${item.id}`} className="cursor-pointer">
-              {item.name}
-            </label>
-            <input
-              type="checkbox"
-              id={`tech-${item.id}`}
-              onChange={() => handleSelection(item.id)}
-            />
-          </div>
+          />
         ))}
       </div>
 
       {selection.length > 0 ? (
-        <div className="mt-12 justify-center flex font-mono">
-          <div
-            ref={codeRef}
-            className="dark:bg-black/50 w-[80%] border border-gray-100 dark:border-zinc-900 p-4 m-4 rounded-lg backdrop-blur-md transition-all duration-300 ease-in-out"
-          >
-            {buildCommands(selection) || ""}
-          </div>
-          <button onClick={copyToClipboard}>
-            <RiFileCopyLine size={24} className="opacity-50" />
-          </button>
-        </div>
+        <SelectionArea
+          selection={selection}
+          buildCommands={buildCommands}
+          reset={resetHandleSelection}
+        />
       ) : (
         "Select a technology to see the command"
       )}

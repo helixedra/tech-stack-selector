@@ -21,7 +21,7 @@ body {
 
 body {
   /* @apply bg-gray-100; */
-  @apply text-gray-900;
+  @apply text-white;
 }
 
 [class="dark"] body {
