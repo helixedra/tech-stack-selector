@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { tech } from "./data/tech";
-import ThemeToggle from "./ToggleTheme";
+// import ThemeToggle from "./ToggleTheme";
 import TechItem from "./components/TechItem";
 import SelectionArea from "./components/SelectionArea";
 import AppHeader from "./components/AppHeader";
